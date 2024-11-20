@@ -1,9 +1,9 @@
 import pandas as pd
+import csv
+import matplotlib.pyplot as plt
+
 import datacleaning as data
-import csv 
-#lee cvv principal
-df = pd.read_csv("analytics.csv")
+import menu_cli as menu
 
-datos = data.clean(df)
 
-print (datos.head(5))
+menu.show()
