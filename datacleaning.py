@@ -1,10 +1,11 @@
 import pandas as pd
 import csv 
 
-df = pd.read_csv("analytics.csv")
-
-df = df.drop_duplicates()
-df.to_csv("clean_analytics.csv", index=False)
-
-cleanDf=read_csv("clean_analytics.csv")
-print(cleanDf)
+#limpieza
+def clean(df):
+    df = df.drop_duplicates()
+    df["YearsWithCurrManager"].fillna(0, inplace=True)
+    df.columns = df.columns.str.replace("[{}()%:]",'',regex=True)
+    df.drop(columns=["Over18"], inplace=True)
+    
+    return df
