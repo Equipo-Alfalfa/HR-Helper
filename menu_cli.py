@@ -1,5 +1,5 @@
-import datacleaning as data
-import read_data as read
+import modulos.datacleaning as data
+import modulos.read_data as read
 def show():
     print("1. mostrar gráficos")
     print("2. mostrar datos")

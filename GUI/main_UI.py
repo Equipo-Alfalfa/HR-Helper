@@ -12,13 +12,15 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 
+import modulos.gen_graf as graf
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
 
         # Cargar el archivo .ui
         loader = QUiLoader()
-        file = QFile("./GUI/MainUI.ui")
+        file = QFile("./GUI/.ui/MainUI.ui")
         file.open(QFile.ReadOnly)
         
         # Cargar la interfaz en la ventana principal
@@ -34,11 +36,12 @@ class MainWindow(QMainWindow):
 
     def setup_connections(self):
 
-        stackedWidget = self.ui.findChild(QStackedWidget, 'stackedWidget')
-        pushButton = self.ui.findChild(QPushButton, 'btn_4')
+        btn_graf = self.ui.findChild(QPushButton, 'btn_graf')
+        btn_graf.clicked.connect(self.btn_graf_clicked)
 
-
-
+    def btn_graf_clicked(self):
+        graf.graf()
+        
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()

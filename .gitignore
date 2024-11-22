@@ -1,0 +1,5 @@
+__pycache__/
+modulos/__pycache__/
+GUI/__pycache__/
+proyecto_venv/Lib/site-packages/seaborn/__pycache__/
+*/__pycache__/

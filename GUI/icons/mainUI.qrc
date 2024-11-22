@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>arraycolors.ico</file>
+  </qresource>
+</RCC>
