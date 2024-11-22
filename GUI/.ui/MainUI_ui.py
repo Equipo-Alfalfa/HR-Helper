@@ -64,8 +64,10 @@ class Ui_Form(object):
         self.btn_calc.setSizePolicy(sizePolicy1)
         self.btn_calc.setMinimumSize(QSize(0, 130))
         self.btn_calc.setMaximumSize(QSize(16777215, 500))
-        icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.SyncSynchronizing))
+        icon = QIcon()
+        icon.addFile(u"../../source/icon/calculator.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_calc.setIcon(icon)
+        self.btn_calc.setIconSize(QSize(24, 24))
 
         self.gridLayout_3.addWidget(self.btn_calc, 1, 0, 1, 1)
 
@@ -84,8 +86,10 @@ class Ui_Form(object):
         self.btn_busc.setSizePolicy(sizePolicy1)
         self.btn_busc.setMinimumSize(QSize(0, 130))
         self.btn_busc.setMaximumSize(QSize(16777215, 500))
-        icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.SystemSearch))
+        icon1 = QIcon()
+        icon1.addFile(u"../../source/icon/magnifier.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_busc.setIcon(icon1)
+        self.btn_busc.setIconSize(QSize(24, 24))
 
         self.gridLayout_3.addWidget(self.btn_busc, 0, 1, 1, 1)
 
@@ -95,8 +99,10 @@ class Ui_Form(object):
         self.btn_graf.setSizePolicy(sizePolicy1)
         self.btn_graf.setMinimumSize(QSize(0, 130))
         self.btn_graf.setMaximumSize(QSize(16777215, 500))
-        icon2 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.EditSelectAll))
+        icon2 = QIcon()
+        icon2.addFile(u"../../source/icon/sales.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_graf.setIcon(icon2)
+        self.btn_graf.setIconSize(QSize(24, 24))
 
         self.gridLayout_3.addWidget(self.btn_graf, 0, 0, 1, 1)
 

@@ -95,7 +95,14 @@
         <string>Calcular Nómina</string>
        </property>
        <property name="icon">
-        <iconset theme="QIcon::ThemeIcon::SyncSynchronizing"/>
+        <iconset>
+         <normaloff>../../source/icon/calculator.ico</normaloff>../../source/icon/calculator.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -148,7 +155,14 @@
         <string>Buscar Trabajadores</string>
        </property>
        <property name="icon">
-        <iconset theme="QIcon::ThemeIcon::SystemSearch"/>
+        <iconset>
+         <normaloff>../../source/icon/magnifier.ico</normaloff>../../source/icon/magnifier.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -176,7 +190,14 @@
         <string>Generar Graficos</string>
        </property>
        <property name="icon">
-        <iconset theme="QIcon::ThemeIcon::EditSelectAll"/>
+        <iconset>
+         <normaloff>../../source/icon/sales.ico</normaloff>../../source/icon/sales.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
        </property>
       </widget>
      </item>
