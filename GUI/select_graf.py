@@ -14,8 +14,9 @@ class grafSelUI(QDialog):
     def __init__(self):
         super().__init__()
         self.ui = QUiLoader().load('./GUI/.ui/select_graf.ui')
+        self.ui.setWindowTitle("Generar Grafico")
+        self.ui.setModal(True)
         self.setup_connections()
-        self.ui.show()
         self.graf_selecc = 0
   
     def setup_connections(self):
@@ -45,10 +46,10 @@ class grafSelUI(QDialog):
 
         if self.graf_selecc == 1:
             self.combbox.clear()
-            self.combbox.addItems(['Campo de Educación','2'])
+            self.combbox.addItems(['Campo de Educación','Rangos de Edad'])
         elif self.graf_selecc == 2:
             self.combbox.clear()
-            self.combbox.addItems(['3','4'])
+            self.combbox.addItems(['Relación Edad/Distancia/Desgaste','4'])
         elif self.graf_selecc == 3:
             self.combbox.clear()
             self.combbox.addItems(['Relación Edad/Departamento','6'])        
@@ -57,4 +58,7 @@ class grafSelUI(QDialog):
     
     def graficar(self):
         graf.graficar(self.graf_selecc, self.combbox.currentText())
+        self.ui.close()
+        
+        
         
