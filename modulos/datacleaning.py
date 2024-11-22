@@ -1,8 +1,3 @@
-import pandas as pd
-import csv 
-import sys
-import os
-
 import read_data as read
 
 df = read.read_data()

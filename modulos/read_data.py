@@ -1,5 +1,4 @@
 import pandas as pd
-import csv
 
 def read_data():
     df = pd.read_csv("source/datos/clean_analytics.csv")

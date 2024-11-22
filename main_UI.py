@@ -1,8 +1,5 @@
 import sys
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtWidgets import (QApplication,  QMainWindow, QPushButton, QDialog)
+from PySide6.QtWidgets import (QApplication,  QMainWindow, QPushButton)
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 from PySide6.QtGui import QIcon

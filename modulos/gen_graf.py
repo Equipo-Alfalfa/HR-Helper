@@ -1,4 +1,3 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import modulos.read_data as data
 import seaborn as sns

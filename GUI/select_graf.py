@@ -1,10 +1,6 @@
 import sys
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtWidgets import (QApplication,  QMainWindow, QPushButton,QDialog, QRadioButton, QComboBox)
+from PySide6.QtWidgets import (QPushButton,QDialog, QRadioButton, QComboBox)
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'modulos')))
