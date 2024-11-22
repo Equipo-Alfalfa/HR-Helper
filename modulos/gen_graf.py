@@ -1,28 +1,40 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import modulos.read_data as data
+import seaborn as sns
 
-# Crear un DataFrame de ejemplo
-df = pd.read_csv("analytics.csv")
+def graf_pie(column):
+    df = data.read_data()
+    column = "EducationField"
+    frecuencia = df[column].value_counts()
 
-# Contar la frecuencia de cada valor en la columna 'Categoría'
-frecuencia = df['EducationField'].value_counts()
+    fig, ax = plt.subplots()
+    frecuencia.plot.pie(
+        autopct='%1.1f%%',  
+        startangle=90,      
+        shadow=True,        
+        figsize=(8, 8)      
+    )
 
-# Crear el gráfico de pastel
-fig, ax = plt.subplots()
-frecuencia.plot.pie(
-    autopct='%1.1f%%',  # Mostrar porcentajes con un decimal
-    startangle=90,      # Iniciar desde el ángulo 90
-    shadow=True,        # Añadir sombra
-    figsize=(8, 8)      # Tamaño de la figura
-)
+    ax.set_title('Campo de educación de los empleados', fontsize=16)
 
-# Añadir título
-ax.set_title('Campo de educación de los empleados', fontsize=16)
+    plt.savefig('source/grafico_pastel.png')
 
-# Guardar el gráfico como PNG
-plt.savefig('source/grafico_pastel.png')
+    plt.ylabel('')
+    plt.show()
 
-# Mostrar el gráfico
-plt.ylabel('')
-plt.show()
+def graf_bar(column):
+    df = data.read_data()
+    grouped_df = df.groupby(['Department', 'AgeGroup']).size().unstack().fillna(0)
+    ax = grouped_df.plot(kind='bar', figsize=(12, 8), stacked=False)
 
+
+
+    # Añadir título y etiquetas a los ejes
+    plt.title('Gráfico de Barras: Relación entre Categoría y Valor')
+    plt.xlabel('Categoría')
+    plt.ylabel('Valor') # Mostrar el gráfico
+
+    for p in ax.patches:
+        ax.annotate(str(int(p.get_height())), (p.get_x() * 1.005, p.get_height() * 1.005))
+    plt.show()
