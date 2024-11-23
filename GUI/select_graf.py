@@ -1,10 +1,9 @@
 import sys
-from PySide6.QtWidgets import (QPushButton,QDialog, QRadioButton, QComboBox)
+from PySide6.QtWidgets import (QPushButton,QDialog, QRadioButton, QComboBox, QLabel)
 from PySide6.QtUiTools import QUiLoader
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'modulos')))
-import modulos.gen_graf as graf
 
 class grafSelUI(QDialog):
     def __init__(self):
@@ -34,6 +33,8 @@ class grafSelUI(QDialog):
         self.combbox = self.ui.findChild(QComboBox, 'comboBox')
         self.combbox.clear()
 
+        self.notilabel = self.ui.findChild(QLabel, 'notilabel')
+
     
     def graf_selected(self):
         selected_button = self.sender()
@@ -53,6 +54,8 @@ class grafSelUI(QDialog):
             self.combbox.clear()
     
     def graficar(self):
+        import modulos.gen_graf as graf
+        self.notilabel.setText('Generando... por favor espere')
         graf.graficar(self.graf_selecc, self.combbox.currentText())
         self.ui.close()
         
