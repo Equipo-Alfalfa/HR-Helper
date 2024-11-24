@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>606</width>
-    <height>367</height>
+    <height>420</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,14 +19,14 @@
   <property name="minimumSize">
    <size>
     <width>606</width>
-    <height>150</height>
+    <height>400</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>HR Helper</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="MainUI.qrc">
+   <iconset>
     <normaloff>:/Icons/arraycolors.ico</normaloff>
     <normalon>../icons/arraycolors.ico</normalon>:/Icons/arraycolors.ico</iconset>
   </property>
@@ -87,7 +87,7 @@
     </widget>
    </item>
    <item row="3" column="0">
-    <layout class="QGridLayout" name="gridLayout_3" rowminimumheight="10,10" columnminimumwidth="10,10">
+    <layout class="QGridLayout" name="gridLayout_3">
      <item row="1" column="0">
       <widget class="QPushButton" name="btn_calc">
        <property name="sizePolicy">
@@ -104,8 +104,8 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>16777215</width>
-         <height>500</height>
+         <width>10000</width>
+         <height>200</height>
         </size>
        </property>
        <property name="text">
@@ -114,6 +114,41 @@
        <property name="icon">
         <iconset>
          <normaloff>../../source/icon/calculator.ico</normaloff>../../source/icon/calculator.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="btn_busc">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>130</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>10000</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Buscar Trabajadores</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../icons/search2.ico</normaloff>../icons/search2.ico</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -139,46 +174,21 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>16777215</width>
-         <height>500</height>
+         <width>10000</width>
+         <height>200</height>
         </size>
        </property>
        <property name="text">
         <string>Limpiar los datos</string>
        </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="btn_busc">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>130</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>500</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Buscar Trabajadores</string>
-       </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../source/icon/magnifier.ico</normaloff>../../source/icon/magnifier.ico</iconset>
+         <normaloff>../icons/burn.ico</normaloff>../icons/burn.ico</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>27</width>
+         <height>27</height>
         </size>
        </property>
       </widget>
@@ -199,8 +209,8 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>16777215</width>
-         <height>500</height>
+         <width>10000</width>
+         <height>200</height>
         </size>
        </property>
        <property name="text">
@@ -223,7 +233,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="MainUI.qrc"/>
+  <include location="../icons/mainUI.qrc"/>
  </resources>
  <connections/>
 </ui>
