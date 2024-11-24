@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QPushButton,
     QSizePolicy, QWidget)
-import MainUI_rc
+import mainUI_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -82,15 +82,6 @@ class Ui_Form(object):
 
         self.gridLayout_3.addWidget(self.btn_calc, 1, 0, 1, 1)
 
-        self.btn_cln = QPushButton(Form)
-        self.btn_cln.setObjectName(u"btn_cln")
-        sizePolicy2.setHeightForWidth(self.btn_cln.sizePolicy().hasHeightForWidth())
-        self.btn_cln.setSizePolicy(sizePolicy2)
-        self.btn_cln.setMinimumSize(QSize(0, 130))
-        self.btn_cln.setMaximumSize(QSize(10000, 200))
-
-        self.gridLayout_3.addWidget(self.btn_cln, 1, 1, 1, 1)
-
         self.btn_busc = QPushButton(Form)
         self.btn_busc.setObjectName(u"btn_busc")
         sizePolicy2.setHeightForWidth(self.btn_busc.sizePolicy().hasHeightForWidth())
@@ -98,11 +89,24 @@ class Ui_Form(object):
         self.btn_busc.setMinimumSize(QSize(0, 130))
         self.btn_busc.setMaximumSize(QSize(10000, 200))
         icon2 = QIcon()
-        icon2.addFile(u"../../source/icon/magnifier.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"../icons/search2.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_busc.setIcon(icon2)
         self.btn_busc.setIconSize(QSize(24, 24))
 
         self.gridLayout_3.addWidget(self.btn_busc, 0, 1, 1, 1)
+
+        self.btn_cln = QPushButton(Form)
+        self.btn_cln.setObjectName(u"btn_cln")
+        sizePolicy2.setHeightForWidth(self.btn_cln.sizePolicy().hasHeightForWidth())
+        self.btn_cln.setSizePolicy(sizePolicy2)
+        self.btn_cln.setMinimumSize(QSize(0, 130))
+        self.btn_cln.setMaximumSize(QSize(10000, 200))
+        icon3 = QIcon()
+        icon3.addFile(u"../icons/burn.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_cln.setIcon(icon3)
+        self.btn_cln.setIconSize(QSize(27, 27))
+
+        self.gridLayout_3.addWidget(self.btn_cln, 1, 1, 1, 1)
 
         self.btn_graf = QPushButton(Form)
         self.btn_graf.setObjectName(u"btn_graf")
@@ -110,17 +114,13 @@ class Ui_Form(object):
         self.btn_graf.setSizePolicy(sizePolicy2)
         self.btn_graf.setMinimumSize(QSize(0, 130))
         self.btn_graf.setMaximumSize(QSize(10000, 200))
-        icon3 = QIcon()
-        icon3.addFile(u"../../source/icon/sales.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_graf.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u"../../source/icon/sales.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_graf.setIcon(icon4)
         self.btn_graf.setIconSize(QSize(24, 24))
 
         self.gridLayout_3.addWidget(self.btn_graf, 0, 0, 1, 1)
 
-        self.gridLayout_3.setColumnMinimumWidth(0, 10)
-        self.gridLayout_3.setColumnMinimumWidth(1, 10)
-        self.gridLayout_3.setRowMinimumHeight(0, 10)
-        self.gridLayout_3.setRowMinimumHeight(1, 10)
 
         self.gridLayout.addLayout(self.gridLayout_3, 3, 0, 1, 1)
 
@@ -138,8 +138,8 @@ class Ui_Form(object):
         self.label_2.setText(QCoreApplication.translate("Form", u" Selecciona una Heramienta a continuaci\u00f3n:", None))
         self.label.setText(QCoreApplication.translate("Form", u"Bienvenido a HR Helper", None))
         self.btn_calc.setText(QCoreApplication.translate("Form", u"Calcular N\u00f3mina", None))
-        self.btn_cln.setText(QCoreApplication.translate("Form", u"Limpiar los datos", None))
         self.btn_busc.setText(QCoreApplication.translate("Form", u"Buscar Trabajadores", None))
+        self.btn_cln.setText(QCoreApplication.translate("Form", u"Limpiar los datos", None))
         self.btn_graf.setText(QCoreApplication.translate("Form", u"Generar Graficos", None))
     # retranslateUi
 

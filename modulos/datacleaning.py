@@ -1,7 +1,5 @@
 import read_data as read
 
-df = read.read_data()
-
 #limpieza
 def clean():
     df = read.read_raw_data()

@@ -13,7 +13,7 @@ def list_files(directory, dest):
 
 # Obtener la lista de archivos en las carpetas adicionales
 additional_files = []
-additional_files.extend(list_files(os.path.join('GUI', '.ui'), os.path.join('GUI', '.ui')))
+additional_files.extend(list_files('GUI', 'GUI'))
 additional_files.extend(list_files('source', 'source'))
 
 # Dependencies are automatically detected, but it might need
