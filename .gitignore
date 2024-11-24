@@ -48,3 +48,4 @@ proyecto_venv/Lib/site-packages/seaborn/external/__pycache__/kde.cpython-311.pyc
 proyecto_venv/Lib/site-packages/seaborn/external/__pycache__/version.cpython-311.pyc
 modulos/__pycache__/read_data.cpython-311.pyc
 modulos/__pycache__/gen_graf.cpython-311.pyc
+/.venv
