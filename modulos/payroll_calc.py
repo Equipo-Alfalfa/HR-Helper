@@ -1,74 +1,67 @@
 import pandas as pd
-from faker import Faker
-import random
+import openpyxl
 
-# faker para generar datos falsos (creo)
-fake = Faker()
+df = pd.read_data("./source/datos/clean_analytics.csv")
+needed_col = df[["Name","C.I","DaysWorked","MonthlyIncome","JobRole","HBN","HEN","HED"]]
+
+needed_col.to_excel("./source/datos/payroll.xlsx", index=False, engine="openpyxl")
 
 # Funcion de calculo de nómina
-def calculate_payroll(salary_monthly, days_worked):
-    salary_daily = salary_monthly / 30
-    salary_hourly = salary_daily / 8  
-    total_salary = salary_daily * days_worked + extra    
-    
-    HENv = 0.08  # Hrs extra nocturnas valor
-    HBNv = 0.16  # Hrs bono nocturno valor
-    HEDv = 0.27  # Hrs extra diurnas valor
-    
-    HEN = HENaux * HENv  
-    HBN = HBNaux * HBNv # Cálculos de pago por hrs extra
-    HED = HEDaux * HEDv  
-    extra = HEN + HBN + HED
+def calculate_payroll(file_path):
+    pay_df = pd.read_excel(file_path)
+    res = []
 
-    IVSS = 2.24
-    RPE = 0.43  # Retenciones varias
-    FAOV = 0.86
+    for index,row  in pay_df, iterrows():
+
+        salary_monthly =row["MonthlyIncome"]
+        days_worked = row["DaysWorked"]
+
+        salary_daily = salary_monthly / 30  # empieza el calculo de salario 
+        salary_hourly = salary_daily / 8      
     
-    tax = IVSS + RPE + FAOV
-    total_to_pay = total_salary - tax
-    return salary_daily, salary_hourly, HENv, HBNv, HEDv, total_salary, tax, total_to_pay
+        HENaux = row["HEN"]
+        HBNaux = row["HBN"] # extraccion de datos de las columnas
+        HEDaux = row["HED"]
 
-# lista para guardar datos
-data = []
-
-# 100 entradas falsas para nuestra prueba
-def excel_gen():
-    for _ in range(100):
-        salary_monthly = fake.random_int(min=130, max=500)  # Random sal mensual
-        days_worked = fake.random_int(min=20, max=30)  # Random dias trabajados
+        HENv = 0.08  
+        HBNv = 0.16  # Valor de cada uno de los tipos de hora extra
+        HEDv = 0.27  
     
-        HBNaux = fake.random_int(min=0, max=2)
-        HEDaux = fake.random_int(min=0, max=2)
-        HENaux = fake.random_int(min=0, max=2)
-    
-        # calcular valores de la nómina
-        salary_daily, salary_hourly, total_salary, deductions, total_to_pay = calculate_payroll(salary_monthly, days_worked)
+        HEN = HENaux * HENv  
+        HBN = HBNaux * HBNv # Cálculos de pago por hrs extra
+        HED = HEDaux * HEDv  
+        extra = HEN + HBN + HED
 
-        entry = {
-            "Cédula de Identidad": fake.random_int(min=10000000, max=99999999),
-            "Nombre del Trabajador": fake.name(),
-            "Cargo": fake.job(),
-            "Fecha de Ingreso": fake.date_between(start_date='-3y', end_date='today'),
-            "Salario Mensual": salary_monthly,
-            "Salario Básico Diario": salary_daily,
-            "Salario por Hora": salary_hourly,
-            "Días Trabajados": days_worked,
-            "HEN": HENv,
-            "HBN": HBNv,
-            "HED": HEDv,
-            "Cantidad HEN": HENaux,
-            "Cantidad HBN": HBNaux,
-            "Cantidad HED": HEDaux,
-            "Total Salario": total_salary,
-            "IVSS": IVSS,
-            "RPE": RPE,
-            "FAOV": FAOV,
-            "Deducción Total": tax,
-            "Total a Pagar": total_to_pay,
-        }
-        data.append(entry)
-    df = pd.DataFrame(data)
-    # Exportar a un excel
-    df.to_excel('nomina.xlsx', index=False)
+        IVSS = 2.24
+        RPE = 0.43  # Retenciones varias
+        FAOV = 0.86
+        tax =  IVSS + RPE + FAOV
 
-    print("Dataset guardado en 'nomina.xlsx'.")
+        total_salary = salary_daily * days_worked + extratax 
+        total_salary = salary_daily * days_worked + extra
+        total_to_pay = total_salary - tax
+
+        # Agregar datos al excel
+        res.append({
+            "Nombre del empleado":row["Name"],
+            "Cédula": row["C.I"],
+            "Cargo": row["JobRole"],
+            "Salario mensual básico": row["MonthlyIncome"],
+            "HEN":HEN,
+            "HBN":HBN,
+            "HED":HED,
+            "Pago extra total": extra,
+            "Retenciones totales": tax,
+            "Total a pagar": total_to_pay,
+        })
+
+        # Guardar resultados en excel
+        res_df = pd.DataFrame(res)
+        res_df.to_excel("./source/datos/pagosnomina.xlsx", index=false, engine = "openpyxl")
+
+    return res_df
+
+# Ejecutar funcion
+pay_res = calculate_payroll("./source/datos/payroll.xlsx")
+
+print(pay_res)
