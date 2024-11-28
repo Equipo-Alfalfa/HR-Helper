@@ -15,11 +15,12 @@ def list_files(directory, dest):
 additional_files = []
 additional_files.extend(list_files('GUI', 'GUI'))
 additional_files.extend(list_files('source', 'source'))
+additional_files.extend(list_files('salidas', 'salidas'))
 
 # Dependencies are automatically detected, but it might need
 # fine tuning.
 build_options = {
-    'packages': ["pandas", "PySide6", "seaborn", "matplotlib", "numpy", "csv", "os", "sys", "modulos", "GUI"],
+    'packages': ["pandas", "PySide6", "seaborn", "matplotlib", "numpy", "csv", "os", "sys", "modulos", "GUI", "faker", "random", "openpyxl"],
     'excludes': [],
     'include_files': additional_files
 }
@@ -32,7 +33,7 @@ executables = [
 
 setup(
     name='HRHelper',
-    version='0.0.1',
+    version='0.3.0',
     description='Programa de ayuda para empleados de recursos humanos',
     options={'build_exe': build_options},
     executables=executables

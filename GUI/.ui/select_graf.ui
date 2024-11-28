@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>graf_form</class>
- <widget class="QDialog" name="graf_form">
+ <class>QDialog</class>
+ <widget class="QDialog" name="QDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>461</width>
-    <height>290</height>
+    <height>268</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="label">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>15</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Mostrar un Gráfico</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0" colspan="2">
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="2" column="0">
-      <widget class="QRadioButton" name="hGrafBtn">
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
-        <string>Mapa de Calor</string>
+        <string>Datos del Gráfico</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="8" column="0">
+      <widget class="QRadioButton" name="vGrafBtn">
+       <property name="text">
+        <string>Gráfico Violín</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
       <widget class="QRadioButton" name="bGrafBtn">
        <property name="text">
         <string>Grafico de Barras</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QRadioButton" name="pGrafBtn">
+       <property name="text">
+        <string>Gráfico Circular</string>
        </property>
       </widget>
      </item>
@@ -60,34 +61,28 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label_3">
-       <property name="font">
-        <font>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Datos del Gráfico</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QRadioButton" name="pGrafBtn">
-       <property name="text">
-        <string>Gráfico Circular</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
+     <item row="8" column="2">
       <widget class="QPushButton" name="Btn_Ok">
        <property name="text">
         <string>Generar</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
+     <item row="4" column="0">
+      <widget class="QRadioButton" name="hGrafBtn">
+       <property name="text">
+        <string>Mapa de Calor</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
       <widget class="QComboBox" name="comboBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <item>
         <property name="text">
          <string>EducationField</string>
@@ -95,7 +90,7 @@
        </item>
       </widget>
      </item>
-     <item row="2" column="1">
+     <item row="7" column="2">
       <widget class="QLabel" name="notilabel">
        <property name="text">
         <string/>
@@ -103,6 +98,36 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>1</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Mostrar un Gráfico</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -40,6 +40,9 @@ class MainWindow(QMainWindow):
         btn_busc = self.ui.findChild(QPushButton, 'btn_excel')
         btn_busc.clicked.connect(self.gen_excel)
 
+        btn_raw = self.ui.findChild(QPushButton, 'btn_raw')
+        btn_raw.clicked.connect(self.raw_window)
+
     def graf_window(self):
         from GUI.select_graf import grafSelUI
         self.graf_form = grafSelUI()
@@ -62,6 +65,8 @@ class MainWindow(QMainWindow):
         self.excel_form = excelUI()
         self.excel_form.ui.show()
         
+    def raw_window(self):
+        pass
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)

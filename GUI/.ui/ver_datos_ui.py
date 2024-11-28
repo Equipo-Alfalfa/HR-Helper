@@ -22,7 +22,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(618, 359)
+        Form.resize(743, 359)
         font = QFont()
         font.setKerning(True)
         Form.setFont(font)

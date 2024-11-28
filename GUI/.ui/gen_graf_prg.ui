@@ -10,6 +10,12 @@
     <height>130</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="minimumSize">
    <size>
     <width>379</width>
@@ -29,19 +35,18 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>-10</y>
-     <width>381</width>
-     <height>71</height>
+     <y>10</y>
+     <width>379</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>16</pointsize>
-     <bold>false</bold>
     </font>
    </property>
    <property name="text">
-    <string>Se está generando el excel</string>
+    <string>Generando Gráfico</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -50,20 +55,20 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>-1</x>
-     <y>70</y>
-     <width>381</width>
-     <height>31</height>
+     <x>0</x>
+     <y>60</y>
+     <width>379</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>11</pointsize>
-     <fontweight>Thin</fontweight>
+     <fontweight>Light</fontweight>
     </font>
    </property>
    <property name="text">
-    <string> esto puede tardar un tiempo</string>
+    <string>   Por favor espere...</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -72,10 +77,10 @@
   <widget class="QProgressBar" name="progressBar">
    <property name="geometry">
     <rect>
-     <x>-1</x>
-     <y>80</y>
-     <width>381</width>
-     <height>61</height>
+     <x>0</x>
+     <y>99</y>
+     <width>379</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="maximum">
@@ -83,37 +88,6 @@
    </property>
    <property name="value">
     <number>-1</number>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
-   </property>
-   <property name="textVisible">
-    <bool>true</bool>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Horizontal</enum>
-   </property>
-   <property name="invertedAppearance">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>92</x>
-     <y>60</y>
-     <width>201</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-     <fontweight>Thin</fontweight>
-    </font>
-   </property>
-   <property name="text">
-    <string>por favor espere...</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
