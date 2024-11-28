@@ -20,6 +20,7 @@ class MostrarDatosUI(QWidget):
         self.line_area = self.ui.findChild(QLineEdit, 'line_area')
         self.line_comp = self.ui.findChild(QLineEdit, 'yrs_comp')
         self.line_prom = self.ui.findChild(QLineEdit, 'yrs_prom')
+        self.line_ci = self.ui.findChild(QLineEdit, 'line_ci')
 
     def mostrar_datos(self):
         from modulos.buscar_empl import buscar_usuarios_por_id
@@ -34,4 +35,8 @@ class MostrarDatosUI(QWidget):
         self.line_area.setText(str(empleado['Department'][index[0]]))
         self.line_comp.setText(str(empleado['YearsAtCompany'][index[0]]))
         self.line_prom.setText(str(empleado['YearsSinceLastPromotion'][index[0]]))
+        self.line_nombre.setText(str(empleado['Name'][index[0]]))
+        self.line_ci.setText(str(empleado['C.I'][index[0]]))
+
+
 

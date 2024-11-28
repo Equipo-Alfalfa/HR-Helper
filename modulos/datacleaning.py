@@ -2,6 +2,7 @@ import read_data as read
 
 #limpieza
 def clean():
+<<<<<<< Updated upstream
     df = read.read_raw_data()
     df = df.drop_duplicates()
     df['Attrition'].replace({'Yes': True, 'No': False}, inplace=True)
@@ -10,3 +11,34 @@ def clean():
     df.drop(columns=["Over18"], inplace=True)
     df.to_csv("./source/datos/clean_analytics.csv", index=False)
     print("Datos limpios")
+=======
+    try:
+        df = read.read_raw_data()
+       
+       # Limpieza
+        df = df.drop_duplicates()
+        df['Attrition'].replace({'Yes': True, 'No': False}, inplace=True)
+        df["YearsWithCurrManager"].fillna(0, inplace=True)
+        df.columns = df.columns.str.replace("[{}()%:]",'',regex=True)
+        df.drop(columns=["Over18"], inplace=True)
+        df.drop(columns=["OverTime"], inplace=True)
+    
+        # generación de cédulas aleatorias y únicas
+        random.seed(42)
+        aux = random.sample(range(10000000, 100000000), len(df))
+        df["C.I"] = aux
+        
+        #adición de hrs extra, nombres y dias trabajados en el mes
+        df["Name"] = [fake.name() for _ in range (len(df))]
+        df["DaysWorked"] = np.random.randint(workedMin, workedMax + 1, size=len(df))
+        df["HBN"] = np.random.randint(extraMin, extraMax + 1, size=len(df))
+        df["HED"] = np.random.randint(extraMin, extraMax + 1, size=len(df))
+        df["HEN"] = np.random.randint(extraMin, extraMax + 1, size=len(df))
+
+        # Guardar
+        df.to_csv("./source/datos/clean_analytics.csv", index=False)
+        print("Datos limpios")
+
+    except Exception as e:
+        print(f"An error ocurred: {e}")
+>>>>>>> Stashed changes

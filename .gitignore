@@ -50,3 +50,4 @@ modulos/__pycache__/read_data.cpython-311.pyc
 modulos/__pycache__/gen_graf.cpython-311.pyc
 /.venv
 /build
+/modulos/__pycache__

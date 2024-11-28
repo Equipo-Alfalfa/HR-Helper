@@ -1,8 +1,20 @@
 import pandas as pd
+<<<<<<< Updated upstream
 from faker import Faker
 import random
 
 # ESTE CODIGO AUN NO FUNCIONA FALTA LA SUMA DE LAS HRS EXTRA
+=======
+import openpyxl
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'modulos')))
+import modulos.read_data as data
+df = data.read_data()
+
+needed_col = df[["Name","C.I","DaysWorked","MonthlyIncome","JobRole","HBN","HEN","HED"]]
+>>>>>>> Stashed changes
 
 # faker para generar datos falsos (creo)
 fake = Faker()
@@ -16,9 +28,19 @@ def calculate_payroll(salary_monthly, days_worked):
     HBNv = 0.16  # Hrs bono nocturno valor
     HEDv = 0.27  # Hrs extra diurnas valor
 
+<<<<<<< Updated upstream
     HENc = 0  # cantidad HEN
     HBNc = 0  # cantidad HBN
     HEDc = 0  # cantidad HED
+=======
+    for index,row  in pay_df.iterrows():
+
+        salary_monthly =row["MonthlyIncome"]
+        days_worked = row["DaysWorked"]
+
+        salary_daily = salary_monthly / 30  # empieza el calculo de salario 
+        salary_hourly = salary_daily / 8      
+>>>>>>> Stashed changes
     
     IVSS = 2.24
     RPE = 0.43
@@ -57,6 +79,7 @@ def excel_gen():
             "HBN": HBN,
             "HED": HED,
 
+<<<<<<< Updated upstream
             "Cantidad HEN": 
             "Cantidad HBN": 
             "Cantidad HED": 
@@ -72,7 +95,20 @@ def excel_gen():
     df = pd.DataFrame(data)
     # Exportar a un excel
     df.to_excel('nomina.xlsx', index=False)
+=======
+        total_salary = salary_daily * days_worked + extra
+        total_to_pay = total_salary - tax
+>>>>>>> Stashed changes
 
     print("Dataset guardado en 'nomina.xlsx'.")
 
+<<<<<<< Updated upstream
 excel_gen()
+=======
+        # Guardar resultados en excel
+        res_df = pd.DataFrame(res)
+        res_df.to_excel("./salidas/pagosnomina.xlsx", index=False, engine = "openpyxl")
+
+    return res_df
+
+>>>>>>> Stashed changes

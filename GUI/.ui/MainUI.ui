@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>606</width>
-    <height>420</height>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -88,8 +88,8 @@
    </item>
    <item row="3" column="0">
     <layout class="QGridLayout" name="gridLayout_3">
-     <item row="1" column="0">
-      <widget class="QPushButton" name="btn_calc">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="btn_graf">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
          <horstretch>0</horstretch>
@@ -109,46 +109,11 @@
         </size>
        </property>
        <property name="text">
-        <string>Calcular Nómina</string>
+        <string>Generar Graficos</string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../source/icon/calculator.ico</normaloff>../../source/icon/calculator.ico</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="btn_busc">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>130</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>10000</width>
-         <height>200</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Buscar Trabajadores</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../icons/search2.ico</normaloff>../icons/search2.ico</iconset>
+         <normaloff>../../source/icon/sales.ico</normaloff>../../source/icon/sales.ico</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -193,8 +158,8 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="btn_graf">
+     <item row="0" column="1">
+      <widget class="QPushButton" name="btn_busc">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
          <horstretch>0</horstretch>
@@ -214,17 +179,37 @@
         </size>
        </property>
        <property name="text">
-        <string>Generar Graficos</string>
+        <string>Buscar Trabajadores</string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../source/icon/sales.ico</normaloff>../../source/icon/sales.ico</iconset>
+         <normaloff>../icons/search2.ico</normaloff>../icons/search2.ico</iconset>
        </property>
        <property name="iconSize">
         <size>
          <width>24</width>
          <height>24</height>
         </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="btn_excel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Generar Excel con datos de pago</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QPushButton" name="btn_raw">
+       <property name="text">
+        <string>Ver datos sin procesar</string>
        </property>
       </widget>
      </item>
