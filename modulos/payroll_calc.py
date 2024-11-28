@@ -16,8 +16,15 @@ def calculate_payroll(file_path):
     pay_df = pd.read_excel(file_path)
     res = []
 
-    for index,row  in pay_df.iterrows():
+    IVSS = 2.24
+    RPE = 0.43  # Retenciones varias
+    FAOV = 0.86
 
+    HENv = 0.08  
+    HBNv = 0.16  # Valor de cada uno de los tipos de hora extra
+    HEDv = 0.27  
+    
+    for index,row  in pay_df.iterrows():
         salary_monthly =row["MonthlyIncome"]
         days_worked = row["DaysWorked"]
 
@@ -28,18 +35,11 @@ def calculate_payroll(file_path):
         HBNaux = row["HBN"] # extraccion de datos de las columnas
         HEDaux = row["HED"]
 
-        HENv = 0.08  
-        HBNv = 0.16  # Valor de cada uno de los tipos de hora extra
-        HEDv = 0.27  
-    
         HEN = HENaux * HENv  
         HBN = HBNaux * HBNv # Cálculos de pago por hrs extra
         HED = HEDaux * HEDv  
         extra = HEN + HBN + HED
 
-        IVSS = 2.24
-        RPE = 0.43  # Retenciones varias
-        FAOV = 0.86
         tax =  IVSS + RPE + FAOV
 
         total_salary = salary_daily * days_worked + extra
