@@ -201,8 +201,14 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="toolTip">
+        <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advertencia:&lt;/p&gt;&lt;p&gt;Esta operación podria tardar un tiempo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="toolTipDuration">
+        <number>-1</number>
+       </property>
        <property name="text">
-        <string>Generar Excel con datos de pago</string>
+        <string notr="true">Generar Excel con datos de pago</string>
        </property>
       </widget>
      </item>

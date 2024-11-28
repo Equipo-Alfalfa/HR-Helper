@@ -26,8 +26,8 @@ class MostrarDatosUI(QWidget):
         from modulos.buscar_empl import buscar_usuarios_por_id
 
         empleado = buscar_usuarios_por_id(self.emp_id)
-
-        index = empleado.index[empleado['EmpID'] == 'RM108'].tolist()       
+        print(empleado['EmpID'])
+        index = empleado.index[empleado['EmpID'] == self.emp_id].tolist()       
         self.line_id.setText(str(empleado['EmpID'][index[0]]))
         self.line_edad.setText(str(empleado['Age'][index[0]]))
         self.line_puesto.setText(str(empleado['JobRole'][index[0]]))

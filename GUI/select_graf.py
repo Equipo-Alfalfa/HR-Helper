@@ -27,6 +27,10 @@ class grafSelUI(QDialog):
         self.rad_3.value = 3
         self.rad_3.toggled.connect(self.graf_selected)
 
+        self.rad_4 = self.ui.findChild(QRadioButton, 'vGrafBtn')
+        self.rad_4.value = 4
+        self.rad_4.toggled.connect(self.graf_selected)
+
         self.btn_ok = self.ui.findChild(QPushButton, 'Btn_Ok')
         self.btn_ok.clicked.connect(self.graficar)
 
@@ -46,16 +50,19 @@ class grafSelUI(QDialog):
             self.combbox.addItems(['Campo de Educación','Rangos de Edad'])
         elif self.graf_selecc == 2:
             self.combbox.clear()
-            self.combbox.addItems(['Relación Edad/Distancia/Desgaste','4'])
+            self.combbox.addItems(['Correlación general de los datos'])
         elif self.graf_selecc == 3:
             self.combbox.clear()
-            self.combbox.addItems(['Relación Edad/Departamento','6'])        
+            self.combbox.addItems(['Relación Edad/Departamento','Brecha salarial p/ Género (promedio)'])        
+        elif self.graf_selecc == 4:
+            self.combbox.clear()
+            self.combbox.addItems(['Brecha salarial p/ Género (densidad)'])
         else:
             self.combbox.clear()
     
     def graficar(self):
-        import modulos.gen_graf as graf
         self.notilabel.setText('Generando... por favor espere')
+        import modulos.gen_graf as graf
         graf.graficar(self.graf_selecc, self.combbox.currentText())
         self.ui.close()
         

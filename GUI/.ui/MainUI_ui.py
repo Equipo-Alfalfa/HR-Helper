@@ -115,6 +115,11 @@ class Ui_Form(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.btn_excel.sizePolicy().hasHeightForWidth())
         self.btn_excel.setSizePolicy(sizePolicy3)
+#if QT_CONFIG(tooltip)
+        self.btn_excel.setToolTip(u"<html><head/><body><p>Advertencia:</p><p>Esta operaci\u00f3n podria tardar un tiempo.</p></body></html>")
+#endif // QT_CONFIG(tooltip)
+        self.btn_excel.setToolTipDuration(-1)
+        self.btn_excel.setText(u"Generar Excel con datos de pago")
 
         self.gridLayout_3.addWidget(self.btn_excel, 1, 0, 1, 1)
 
@@ -142,7 +147,6 @@ class Ui_Form(object):
         self.btn_graf.setText(QCoreApplication.translate("Form", u"Generar Graficos", None))
         self.btn_cln.setText(QCoreApplication.translate("Form", u"Limpiar los datos", None))
         self.btn_busc.setText(QCoreApplication.translate("Form", u"Buscar Trabajadores", None))
-        self.btn_excel.setText(QCoreApplication.translate("Form", u"Generar Excel con datos de pago", None))
         self.btn_raw.setText(QCoreApplication.translate("Form", u"Ver datos sin procesar", None))
     # retranslateUi
 

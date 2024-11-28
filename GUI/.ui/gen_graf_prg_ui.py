@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'gen_exl_prg.ui'
+## Form generated from reading UI file 'gen_graf_prg.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -23,38 +23,34 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(379, 130)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
+        Dialog.setSizePolicy(sizePolicy)
         Dialog.setMinimumSize(QSize(379, 130))
         Dialog.setMaximumSize(QSize(379, 130))
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(0, -10, 381, 71))
+        self.label.setGeometry(QRect(0, 10, 379, 61))
         font = QFont()
         font.setPointSize(16)
-        font.setBold(False)
         self.label.setFont(font)
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_2 = QLabel(Dialog)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(-1, 70, 381, 31))
+        self.label_2.setGeometry(QRect(0, 60, 379, 51))
         font1 = QFont()
         font1.setPointSize(11)
-        font1.setWeight(QFont.Thin)
+        font1.setWeight(QFont.Light)
         self.label_2.setFont(font1)
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.progressBar = QProgressBar(Dialog)
         self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setGeometry(QRect(-1, 80, 381, 61))
+        self.progressBar.setGeometry(QRect(0, 99, 379, 23))
         self.progressBar.setMaximum(0)
         self.progressBar.setValue(-1)
         self.progressBar.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.progressBar.setTextVisible(True)
-        self.progressBar.setOrientation(Qt.Orientation.Horizontal)
-        self.progressBar.setInvertedAppearance(False)
-        self.label_3 = QLabel(Dialog)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(92, 60, 201, 20))
-        self.label_3.setFont(font1)
-        self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.retranslateUi(Dialog)
 
@@ -63,8 +59,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"Se est\u00e1 generando el excel", None))
-        self.label_2.setText(QCoreApplication.translate("Dialog", u" esto puede tardar un tiempo", None))
-        self.label_3.setText(QCoreApplication.translate("Dialog", u"por favor espere...", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"Generando Gr\u00e1fico", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog", u"   Por favor espere...", None))
     # retranslateUi
 
