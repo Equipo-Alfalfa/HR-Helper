@@ -72,12 +72,12 @@ class Ui_Form(object):
 
         self.gridLayout_3.addWidget(self.line_area, 3, 1, 1, 1)
 
-        self.lineEdit_2 = QLineEdit(Form)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setReadOnly(True)
-        self.lineEdit_2.setClearButtonEnabled(False)
+        self.line_ci = QLineEdit(Form)
+        self.line_ci.setObjectName(u"line_ci")
+        self.line_ci.setReadOnly(True)
+        self.line_ci.setClearButtonEnabled(False)
 
-        self.gridLayout_3.addWidget(self.lineEdit_2, 2, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.line_ci, 2, 1, 1, 1)
 
         self.label_4 = QLabel(Form)
         self.label_4.setObjectName(u"label_4")

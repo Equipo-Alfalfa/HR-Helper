@@ -1,7 +1,12 @@
 import pandas as pd
 import openpyxl
+import os
+import sys
 
-df = pd.read_data("./source/datos/clean_analytics.csv")
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'modulos')))
+import modulos.read_data as data
+df = data.read_data()
+
 needed_col = df[["Name","C.I","DaysWorked","MonthlyIncome","JobRole","HBN","HEN","HED"]]
 
 needed_col.to_excel("./source/datos/payroll.xlsx", index=False, engine="openpyxl")
@@ -11,7 +16,7 @@ def calculate_payroll(file_path):
     pay_df = pd.read_excel(file_path)
     res = []
 
-    for index,row  in pay_df, iterrows():
+    for index,row  in pay_df.iterrows():
 
         salary_monthly =row["MonthlyIncome"]
         days_worked = row["DaysWorked"]
@@ -37,7 +42,6 @@ def calculate_payroll(file_path):
         FAOV = 0.86
         tax =  IVSS + RPE + FAOV
 
-        total_salary = salary_daily * days_worked + extratax 
         total_salary = salary_daily * days_worked + extra
         total_to_pay = total_salary - tax
 
@@ -57,11 +61,7 @@ def calculate_payroll(file_path):
 
         # Guardar resultados en excel
         res_df = pd.DataFrame(res)
-        res_df.to_excel("./source/datos/pagosnomina.xlsx", index=false, engine = "openpyxl")
+        res_df.to_excel("./salidas/pagosnomina.xlsx", index=False, engine = "openpyxl")
 
     return res_df
 
-# Ejecutar funcion
-pay_res = calculate_payroll("./source/datos/payroll.xlsx")
-
-print(pay_res)
