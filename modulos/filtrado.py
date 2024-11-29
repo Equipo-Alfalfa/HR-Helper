@@ -5,7 +5,7 @@ def filtrar():
     dfaux = data.read_data()
     while True:
         todas = dfaux.columns
-        columnas_especificas = ['Age','MonthlyIncome','YearsAtCompany','Days worked']
+        columnas_especificas = ['Age','MonthlyIncome','YearsAtCompany','Days worked','Gender']
         columnas = dict.fromkeys(range(len(todas)))
         y = iter(todas)
         for i in columnas:
