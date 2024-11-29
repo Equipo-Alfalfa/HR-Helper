@@ -1,7 +1,6 @@
 from cx_Freeze import setup, Executable
 import os
 
-# Función para recorrer recursivamente un directorio
 def list_files(directory, dest):
     files = []
     for dirpath, _, filenames in os.walk(directory):
@@ -11,14 +10,12 @@ def list_files(directory, dest):
             files.append((src_file, dest_file))
     return files
 
-# Obtener la lista de archivos en las carpetas adicionales
 additional_files = []
 additional_files.extend(list_files('GUI', 'GUI'))
 additional_files.extend(list_files('source', 'source'))
 additional_files.extend(list_files('salidas', 'salidas'))
 
-# Dependencies are automatically detected, but it might need
-# fine tuning.
+
 build_options = {
     'packages': ["pandas", "PySide6", "seaborn", "matplotlib", "numpy", "csv", "os", "sys", "modulos", "GUI", "faker", "random", "openpyxl"],
     'excludes': [],

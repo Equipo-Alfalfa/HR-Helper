@@ -104,7 +104,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>10000</width>
+         <width>600</width>
          <height>200</height>
         </size>
        </property>
@@ -139,7 +139,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>10000</width>
+         <width>600</width>
          <height>200</height>
         </size>
        </property>
@@ -174,7 +174,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>10000</width>
+         <width>600</width>
          <height>200</height>
         </size>
        </property>
@@ -200,6 +200,18 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>130</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>600</width>
+         <height>200</height>
+        </size>
        </property>
        <property name="toolTip">
         <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advertencia:&lt;/p&gt;&lt;p&gt;Esta operación podria tardar un tiempo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

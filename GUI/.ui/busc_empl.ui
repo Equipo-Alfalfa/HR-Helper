@@ -98,7 +98,7 @@
         <cursorShape>IBeamCursor</cursorShape>
        </property>
        <property name="text">
-        <string/>
+        <string>RM</string>
        </property>
        <property name="placeholderText">
         <string notr="true" comment="Ingrese el ID, por ejemplo RM000" extracomment="000"/>
