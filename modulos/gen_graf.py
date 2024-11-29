@@ -46,7 +46,6 @@ def graf_pie(btn_dato):
 
     plt.ylabel('')
     plt.show()
-    print(dato)
 
 def graf_bar(btn_dato):
     if btn_dato == "Relación Edad/Departamento":
@@ -62,7 +61,6 @@ def graf_bar(btn_dato):
         for p in ax.patches:
             ax.annotate(str(int(p.get_height())), (p.get_x() * 1.005, p.get_height() * 1.005))
         plt.show()
-        print(btn_dato)
     elif btn_dato == "Brecha salarial p/ Género (promedio)":
         import pandas as pd
         sns.barplot(x='Gender', y='MonthlyIncome', data=df, estimator=pd.Series.mean, ci=None, palette=['blue', 'pink'])
@@ -71,21 +69,17 @@ def graf_bar(btn_dato):
         plt.xlabel('Género')
         plt.ylabel('Salario')
         plt.show()
-        print(btn_dato)
 
 def graf_cal(btn_dato):
     import numpy as np
-    # Grafico de calor de valores correlacionados
     df = data.read_data()
     dfaux = df.copy()
     plt.figure(figsize=(8, 6))
     x = dfaux.select_dtypes(include= [int, float]).corr()
-    #print(x)
     el = set([j if j < 0.3 else None for i in x.values for j in i])
     for i in el:
         x.replace(np.float64(i), 0, inplace= True)
     fl = set([i if x[i].values.sum() <= 1 else None for i in x.columns])
-    #print(fl)
     for i in fl:
         if i != None:
             dfaux.drop([i], axis= 1, inplace= True)
@@ -98,23 +92,19 @@ def graf_cal(btn_dato):
         right=0.981,
         hspace=0.2,
         wspace=0.2)
-    #print(y)
     sns.heatmap(y, annot=True, cmap="coolwarm")
     plt.xticks(rotation=70)
     
     plt.title(f'Gráfico de Calor: Columnas')
     plt.show()
-    #print(df.select_dtypes(include=[float, int]).corr())
 
 def graf_violi(btn_dato):
     plt.figure(figsize=(10, 6))
     sns.violinplot(x='Gender', y='MonthlyIncome', data=df, palette=['blue', 'pink'])
 
-    # Añadir etiquetas y título
     plt.xlabel('Género')
     plt.ylabel('Salario')
     plt.title(f'Violin Plot: {btn_dato}')
 
-    # Mostrar el gráfico
     plt.show()
 
