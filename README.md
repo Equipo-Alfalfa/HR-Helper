@@ -20,7 +20,7 @@ para esto puedes instalar las dependencias con pip freeze: pip install -r requir
 
 si deseas ejecutar el programa en un SO distinto a windows puedes ejecutar el archivo mainUI.py luego de haber instalado las dependencias necesarias con el paso anterior
 
-para ejecutar el programa puedes descargar el zip en releases y ejecutar el archivo .exe
+para ejecutar el programa puedes descargar el zip en [releases](https://github.com/Equipo-Alfalfa/HR-Helper/releases/tag/0.3.1-Alpha3) y ejecutar el archivo .exe
 
 # TO DO:
 - Optimizar código para ejecuciones más rápidas
