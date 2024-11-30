@@ -13,7 +13,9 @@ En "salidas" se encuentran archivos operados como el excel que contiene los pago
 
 Todas las funciones se encuentran en el directorio de "módulos", entre ellas sew destacan un buscador de empleados que tiene como salida ciertos datos relevantes del mismo, una función de filtrado de datos para encontrar grupos de empleados que coinciden con cierta caractaristica (como los salarios), un generador de gráficos que destaca información relevante para la gestión de talento humano y una calculadora de pagos de nómina la cual extrae columnas de un csv para convertirlas en un excel para calcular el pago neto.
 
-El programa se instala a partir del archivo "setup.py" generando un ejecutable.
+El programa se construye a partir del archivo "setup.py" generando un ejecutable.
+
+para ejecutar el programa puedes descargar el zip en releases y ejecutar el archivo .exe
 
 # TO DO:
 - Optimizar código para ejecuciones más rápidas
